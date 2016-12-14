@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <style>
+  p.groove {
+    border-style: groove;
+    text-align:center;
+    line-height: 75px;
+  }
+  </style>
+  <body>
+  
+  <div class="container">
+    <div class="jumbotron">
+    <form class="form-horizontal" name="convert">
+
+      <div class="form-group">
+        <div  align="center">
+          <label class="control-label col-sm-12"><h2 class="text-center">BMI Calculator</h2></label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div  align="center">
+         <label class="control-label col-sm-12"><h2 class="text-center">Enter Your Weight</h2></label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-4" for="stone"><p class="text-center"><b>Stone</b></p></label>
+        <label class="control-label col-sm-4" for="pound"><p class="text-center"><b>Pounds</b></p></label>
+        <label class="control-label col-sm-4" for="kilogram"><p class="text-center"><b>or KGs</b></p></label>
+      </div>
+      
+      <div class="form-group">
+
+        <div class="col-sm-4">
+          <input [(ngModel)]="stoneVal" type="text" class="form-control" name="stone" id="stone" (keyup.enter)="stoneAndPoundToKilogram($event)" placeholder="Enter a number">
+        </div>
+
+        <div class="col-sm-4">
+          <input [(ngModel)]="poundVal" type="text" class="form-control" name="pound" id="pound" (keyup.enter)="stoneAndPoundToKilogram($event)" placeholder="Enter a number">
+        </div>
+
+        <div class="col-sm-4">
+          <input [(ngModel)]="kilogramVal" type="text" class="form-control" name="kilogram" id="kilogram" (keyup.enter)="kilogramToStoneAndPound($event)" placeholder="Enter a number">
+        </div>
+        
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-12" ><h2 class="text-center">Enter Your Height</h2></label>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-4" for="feet"><p class="text-center"><b>Feet</b></p></label>
+        <label class="control-label col-sm-4" for="inch"><p class="text-center"><b>Inches</b></p></label>
+        <label class="control-label col-sm-4" for="metre"><p class="text-center"><b>or Metres</b></p></label>
+      </div>
+
+      <div class="form-group">
+      <div class="col-sm-4">
+          <input [(ngModel)]="feetVal" type="text" class="form-control" name="feet" id="feet" (keyup.enter)="feetAndInchToMetre($event)" placeholder="Enter a number">
+      </div>
+      <div class="col-sm-4">
+          <input [(ngModel)]="inchVal" type="text" class="form-control" name="inch" id="inch" (keyup.enter)="feetAndInchToMetre($event)" placeholder="Enter a number">
+      </div>
+      <div class="col-sm-4">
+          <input [(ngModel)]="metreVal" type="number" class="form-control" name="metre" id="metre" (keyup.enter)="metreToFeetAndInch($event)" placeholder="Enter a number">
+      </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-12">
+          <button (click)="convert()" type="submit" class="btn btn-primary center-block" id="convert-btn">Calculate BMI</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <p class="text-center">Enter Your weight in either stone/pounds or kilograms and your height in feet/inches or metres</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <p>Result:</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <p class="groove"><b>Your estimated BMI is {{BMIVal}}, this is in the {{range}}</b></p>
+        </div>
+      </div>
+      
+    </form>
+    </div>
+  </div>
+</body>
+</html>
+

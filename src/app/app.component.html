@@ -1,3 +1,13 @@
-<h1>
-  {{title}}
-</h1>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">     
+        <ul class="nav navbar-nav">
+            <li><a [routerLink]="['home']">WDDCa2</a></li>
+            <li><a [routerLink]="['home']">Home</a></li>
+            <li><a [routerLink]="['part-a']">PartA</a></li>
+            <li><a [routerLink]="['part-b']">PartB</a></li>        
+        </ul>          
+    </div>  
+</nav>
+</body>
+<router-outlet></router-outlet>
